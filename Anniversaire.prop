@@ -1,0 +1,19 @@
+{
+	"modules": { 
+		"Anniversaire": {
+			"version": "1.0",
+			"name": "anniversaire",
+			"rules": {
+			"anni":["what s my birthday","birthday","anniversary"],
+			"stop":["stop the birthday song","stop * birthday * song","turn off the birthday song","extin the birthday song"]
+			}
+		}
+	},
+	"cron": {
+		"Anniversaire": { 
+			"name": "Anniversaire",
+			"time": "00 8 * * *"
+		}
+	}
+}
+			
