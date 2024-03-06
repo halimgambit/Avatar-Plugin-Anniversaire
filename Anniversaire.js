@@ -1,37 +1,3 @@
-exports.cron = function(data) {
-
-	const moment = require('moment');
-	moment.locale('fr');
-	const now = moment();
-
-  const anniversaires = [
-  { prenom: "david", birthday: "31-12-2023" },
-  { prenom: "paul", birthday: "10-05-2023" },
-  { prenom: "jean", birthday: "20-09-2023" },
-  { prenom: "elise", birthday: "08-05-2023" }
-  ];
-
-const todayBirthday = anniversaires.find(({ birthday }) => now.format('DD-MM-YYYY') === birthday);
-
-if (todayBirthday) {
-	Avatar.speak(`Aujourd'hui, c'est l'anniversaire de ${todayBirthday.prenom}, Joyeux anniversaire, ${todayBirthday.prenom} !`, data.client, () => {
-		Avatar.Speech.end(data.client);
-		playMp3
-	});
-} else {
-	Avatar.speak("Pas d'anniversaire aujourd'hui", data.client, () => {
-		Avatar.Speech.end(data.client);
-	});
-}
-
-function playMp3 (data, client) {
-	Avatar.play(`${__dirname}/medias/JoyeuxAnniversaire.mp3`, data.client);
-}
-
-
-}
-
-	
 exports.action = function(data, callback){
 
 	var tblCommand = {
